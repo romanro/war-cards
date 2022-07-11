@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services';
+import { DeskService } from '@core/services';
 
 @Component({
   selector: 'war-war-game-start-page',
@@ -7,9 +7,9 @@ import { ApiService } from 'src/app/services';
   styleUrls: ['./war-game-start-page.component.scss'],
 })
 export class WarGameStartPageComponent implements OnInit {
-  constructor(private api: ApiService) {}
+  constructor(private deskService: DeskService) {}
 
   ngOnInit(): void {
-    this.api.getNewDesks(1).subscribe((data) => console.log(data));
+    this.deskService.getNewDesks(1).subscribe((data) => console.log(data));
   }
 }

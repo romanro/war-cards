@@ -9,7 +9,8 @@ const routes: Routes = [
   },
   {
     path: 'war',
-    loadChildren: () => import('./war/war.module').then((m) => m.WarModule),
+    loadChildren: () =>
+      import('./games/war/war.module').then((m) => m.WarModule),
   },
 ];
 

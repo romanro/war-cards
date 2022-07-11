@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { EndPointURI } from '@core/models';
+import { environment } from '@environment/environment';
 import { catchError } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { NewDescResponse } from '../models';
 import { ErrorHandlingService } from './error-handling.service';
 
 @Injectable({
@@ -13,11 +13,9 @@ export class ApiService {
 
   API_URL = environment.API_URL;
 
-  getNewDesks(desks: number = 1) {
+  get<T>(url: EndPointURI) {
     return this.http
-      .get<NewDescResponse>(
-        `${this.API_URL}deck/new/shuffle/?deck_count=${desks}`
-      )
+      .get<T>(`${this.API_URL}${url}`)
       .pipe(catchError(this.error.handleHttpError));
   }
 }
