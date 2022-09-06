@@ -1,6 +1,19 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "extends": "./tsconfig.json",
+  "rules": {
+    "component-selector": [
+      true,
+      "element",
+      [
+        "app",
+        "war",
+        "ui",
+        "core"
+      ],
+      "kebab-case"
+    ]
+  },
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "types": [],
