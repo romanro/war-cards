@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ApiEndPoint, NewDescParams, NewDescResponse } from '@core/models';
+import { ApiEndPoint, NewDeckParams, NewDeckResponse } from '@core/models';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class DeskService {
     jokers_enabled = false,
     cards = [],
     shuffled = true,
-  }: NewDescParams) {
+  }: NewDeckParams) {
     const queryString = new URLSearchParams({
       deck_count: deck_count.toString(),
       jokers_enabled: jokers_enabled.toString(),
@@ -25,7 +25,7 @@ export class DeskService {
       queryString.append('cards', cards.join(','));
     }
 
-    return this.api.get<NewDescResponse>(
+    return this.api.get<NewDeckResponse>(
       `${this.PREFIX}/new/${
         shuffled ? 'shuffle/' : ''
       }?${queryString.toString()}`

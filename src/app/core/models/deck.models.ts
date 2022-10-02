@@ -1,6 +1,6 @@
 import { CardCode } from './card.models';
 
-export type NewDescParams = {
+export type NewDeckParams = {
   deck_count: number;
   jokers_enabled?: boolean;
   cards?: CardCode[];

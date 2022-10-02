@@ -1,4 +1,4 @@
-export type NewDescResponse = {
+export type NewDeckResponse = {
   success: boolean;
   deck_id: string;
   shuffled: boolean;

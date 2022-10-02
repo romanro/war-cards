@@ -1,6 +1,6 @@
-import { GameSettings, GameType } from '@core/models';
+import { NewGameSettings, GameType } from '@core/models';
 
-export const NEW_GAME_SETTINGS: Record<GameType, GameSettings> = {
+export const NEW_GAME_SETTINGS: Record<GameType, NewGameSettings> = {
   WAR: {
     players: { computer: 1, human: 1 },
     decks: {

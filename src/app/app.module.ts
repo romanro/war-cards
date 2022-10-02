@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HomePageComponent, ChoosePlayersPageComponent } from './pages';
+import { CanActivateChoosePlayers } from '@core/guards';
+import { UiModule } from '@ui/ui.module';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [],
+  declarations: [AppComponent, HomePageComponent, ChoosePlayersPageComponent],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, UiModule],
+  providers: [CanActivateChoosePlayers],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

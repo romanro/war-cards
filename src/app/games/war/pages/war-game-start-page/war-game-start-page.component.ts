@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { GameService } from '@core/services/game.service';
+import { GameService } from '@core/services';
 
 @Component({
   selector: 'war-war-game-start-page',
@@ -9,10 +9,15 @@ import { GameService } from '@core/services/game.service';
 export class WarGameStartPageComponent implements OnInit, OnDestroy {
   constructor(public gameService: GameService) {}
 
+  public isLoading = true;
+
   ngOnInit(): void {
-    this.gameService
-      .startNewGame('WAR')
-      .subscribe(() => console.log(this.gameService.current_desk?.remaining));
+    this.gameService.startNewGame()?.subscribe(() => {
+      if (this.gameService.current_desk?.success) {
+        this.isLoading = false;
+        console.log(this.gameService.current_desk);
+      }
+    });
   }
 
   ngOnDestroy(): void {

@@ -1,10 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PreloaderComponent } from './components';
+import {
+  PreloaderComponent,
+  ComputerPlayerComponent,
+  HumanPlayerFormComponent,
+} from './components';
 
 @NgModule({
-  declarations: [PreloaderComponent],
+  declarations: [
+    PreloaderComponent,
+    ComputerPlayerComponent,
+    HumanPlayerFormComponent,
+  ],
   imports: [CommonModule],
-  exports: [PreloaderComponent],
+  exports: [
+    PreloaderComponent,
+    ComputerPlayerComponent,
+    HumanPlayerFormComponent,
+  ],
 })
 export class UiModule {}

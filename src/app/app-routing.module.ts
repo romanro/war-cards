@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './pages';
+import { HomePageComponent, ChoosePlayersPageComponent } from './pages';
+import { CanActivateChoosePlayers } from '@core/guards';
 
 const routes: Routes = [
   {
@@ -8,10 +9,16 @@ const routes: Routes = [
     component: HomePageComponent,
   },
   {
+    path: 'players',
+    canActivate: [CanActivateChoosePlayers],
+    component: ChoosePlayersPageComponent,
+  },
+  {
     path: 'war',
     loadChildren: () =>
       import('./games/war/war.module').then((m) => m.WarModule),
   },
+  { path: '**', component: HomePageComponent },
 ];
 
 @NgModule({

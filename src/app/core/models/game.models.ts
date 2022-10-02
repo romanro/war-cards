@@ -1,8 +1,14 @@
-import { NewDescParams } from './deck.models';
+import { NewDeckParams } from './deck.models';
+
+export type GameState = {
+  isFetching: boolean;
+};
 
 export type GameType = 'WAR';
 
-export type GameSettings = {
-  players: { computer: number; human: number };
-  decks: NewDescParams;
+export type NewGameSettings = {
+  players: NewGamePlayerSettings;
+  decks: NewDeckParams;
 };
+
+export type NewGamePlayerSettings = { computer: number; human: number };

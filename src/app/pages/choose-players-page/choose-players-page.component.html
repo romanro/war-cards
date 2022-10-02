@@ -1,0 +1,9 @@
+<div class="computer-players players-container" *ngIf="computerPlayers.length">
+  <h3>Computer Player{{ computerPlayers.length > 1 ? "s" : "" }}:</h3>
+  <ui-computer-player *ngFor="let cp of computerPlayers"></ui-computer-player>
+</div>
+
+<div class="human-players players-container" *ngIf="humanPlayers.length">
+  <h3>Human Player{{ humanPlayers.length > 1 ? "s" : "" }}:</h3>
+  <ui-human-player-form *ngFor="let hp of humanPlayers"></ui-human-player-form>
+</div>

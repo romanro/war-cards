@@ -1,2 +1,5 @@
-<ui-preloader></ui-preloader>
-<p>{{ gameService.current_desk?.remaining }}</p>
+<ui-preloader *ngIf="isLoading; else loaded"></ui-preloader>
+
+<ng-template #loaded
+  ><p>{{ gameService.current_desk?.remaining }}</p></ng-template
+>
