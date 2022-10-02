@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Player } from '@core/models';
 
 @Component({
   selector: 'ui-computer-player',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./computer-player.component.scss'],
 })
 export class ComputerPlayerComponent implements OnInit {
+  @Input() player: Player;
   constructor() {}
 
   ngOnInit(): void {}

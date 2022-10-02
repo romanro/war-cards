@@ -5,6 +5,7 @@ import {
   ComputerPlayerComponent,
   HumanPlayerFormComponent,
 } from './components';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import {
     ComputerPlayerComponent,
     HumanPlayerFormComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   exports: [
     PreloaderComponent,
     ComputerPlayerComponent,
